@@ -1,4 +1,4 @@
-
+import 'package:eurus_mobile/widgets/app_button_themes.dart';
 
 import '../screens/signup_phone_verify.dart';
 import 'package:flutter/material.dart';
@@ -21,88 +21,77 @@ class _SignUpFormState extends State<SignUpForm> {
   // String _phoneNumber;
 
   bool _isObscure = true;
+  bool _isChecked = false;
 
 final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Form(
-        key: _signFormKey,
-        child: Column(
-          children: [
-            buildInputEmail('Email'),
-            // buildInputPhoneNumber('Phone Number'),
-            buildInputPassword('Password', true),
+    return Form(
+      key: _signFormKey,
+      child: Column(
+        children: [
+          buildInputEmail('Email'),
+          buildInputPassword('Password', true),
 
-              SizedBox(
-                height: 20,
-              ),
-              CheckBox(
-                'Agree to terms and conditions.'
-                ),
-              SizedBox(
-                height: 20,
-              ),
-              CheckBox(
-                'I have at least 18 years old.'
-                ),
-              SizedBox(
-                height: 20,
-              ),
-
-              ElevatedButton(
-              child: const Text(
-                'Next',
-                style: TextStyle(
-                  color: Colors.white, fontSize: 16
-                  ),
-              ),
-              
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Color(0xff276EF1)),
-                overlayColor: MaterialStateProperty.all(Colors.blue),
-                elevation: MaterialStateProperty.all(8),
-                fixedSize: MaterialStateProperty.all(const Size(240, 40)),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
-                )
-              ),
-
-              onPressed: () => {
-                if(!_signFormKey.currentState.validate()){
-                  
-                }
-                else{
-                  _signFormKey.currentState.save(),
-                  print(_email),
-                  print(_password),  
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignUpPhoneVerifyScreen()))               
-                },
-              },
+            const SizedBox(
+              height: 20,
             ),
-          ],
-        ),
+            
+            CheckBox(
+              'Agree to terms and conditions.'
+              ),
+            const SizedBox(
+              height: 20,
+            ),
+            CheckBox(
+              'I have at least 18 years old.'
+              ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            ElevatedButton(
+            child: const Text(
+              'Next',
+              style: TextStyle(
+                color: Colors.white, fontSize: 16
+                ),
+            ),
+            
+            style: appPrimaryButton,
+            
+            onPressed: () => {
+              if(!_signFormKey.currentState.validate()){
+                
+              }
+              else{
+                _signFormKey.currentState.save(),
+                print(_email),
+                print(_password),  
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignUpPhoneVerifyScreen()))               
+              },
+            },
+          ),
+        ],
       ),
     );
   }
 
   Padding buildInputPassword(String label, bool pass) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
         obscureText: pass ? _isObscure : false,
         decoration: InputDecoration(
             labelText: label,
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
               color: kTextFieldColor,
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: kPrimaryColor),
             ),
             suffixIcon: pass
@@ -113,11 +102,11 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
                       });
                     },
                     icon: _isObscure
-                        ? Icon(
+                        ? const Icon(
                             Icons.visibility_off,
                             color: kTextFieldColor,
                           )
-                        : Icon(
+                        : const Icon(
                             Icons.visibility,
                             color: kPrimaryColor,
                           ),
@@ -145,14 +134,14 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
 
   Padding buildInputEmail(String label) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
         decoration: InputDecoration(
             labelText: label,
-            labelStyle: TextStyle(
+            labelStyle: const TextStyle(
                 color: Colors.black45
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                   color: kPrimaryColor
               ),
@@ -179,36 +168,4 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
     );
   }
 
-  // Padding buildInputPhoneNumber(String label) {
-  //   return Padding(
-  //     padding: EdgeInsets.symmetric(vertical: 5),
-  //     child: IntlPhoneField(
-  //       decoration: InputDecoration(
-  //           labelText: label,
-  //           labelStyle: TextStyle(
-  //               color: Colors.black45
-  //           ),
-  //           focusedBorder: UnderlineInputBorder(
-  //             borderSide: BorderSide(
-  //                 color: kPrimaryColor
-  //             ),
-  //           ),
-  //       ),
-      
-  //     keyboardType: TextInputType.phone,
-
-  //     initialCountryCode: 'LK',
-  //     countries: const ['LK'],
-  //     showDropdownIcon: false,
-  //     showCountryFlag: false,
-      
-  //     onSaved: (value){
-  //       _phoneNumber = value.number;
-  //     },
-        
-  //     ),
-  //   );
-  // }
-
 }
-

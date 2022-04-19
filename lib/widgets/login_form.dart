@@ -1,20 +1,66 @@
+import 'package:eurus_mobile/screens/home.dart';
+import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
 class LogInForm extends StatefulWidget {
+  const LogInForm({Key key}) : super(key: key);
+
+  
   @override
   _LogInFormState createState() => _LogInFormState();
 }
 
 class _LogInFormState extends State<LogInForm> {
+
+  String _email;
+  String _password;
+
   bool _isObscure = true;
+
+  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        buildInputEmail('Email'),
-        buildInputPassword('Password', true),
-      ],
+    return Form(
+      key: _loginFormKey,
+      child: Column(
+        children: [
+          buildInputEmail('Email'),
+          buildInputPassword('Password', true),
+
+            SizedBox(
+              height: 20,
+            ),
+            
+            ElevatedButton(
+            child: const Text(
+              'Login',
+              style: TextStyle(
+                color: Colors.white, fontSize: 16
+                ),
+            ),
+            
+            style: appPrimaryButton,
+
+            onPressed: () => {
+              if(!_loginFormKey.currentState.validate()){
+                
+              }
+              else{
+                _loginFormKey.currentState.save(),
+                print(_email),
+                print(_password),  
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()))               
+              },
+            },
+          ),
+    
+        ],
+      ),
     );
   }
 
@@ -49,6 +95,22 @@ class _LogInFormState extends State<LogInForm> {
                           ),
                   )
                 : null),
+
+              validator: (String value){
+                if(value == null || value.isEmpty){
+                  return 'Password is Required';
+                }
+                
+                if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
+                  return 'Enter valid password';
+                }
+                return null;
+              },
+              
+              onSaved: (String value){
+                _password = value;
+              },
+
       ),
     );
   }
@@ -68,6 +130,23 @@ class _LogInFormState extends State<LogInForm> {
               ),
             ),
         ),
+
+      validator: (String value){
+        if(value == null || value.isEmpty){
+          return 'Email is Required';
+        }
+
+        if(!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(value)) {
+          return 'Please enter a valid email address';
+        }
+        return null;
+      },
+      
+      onSaved: (String value){
+        _email = value;
+      },
+
       ),
     );
   }

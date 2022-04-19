@@ -1,3 +1,4 @@
+import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
@@ -15,8 +16,25 @@ class HomeScreen extends StatelessWidget {
             'Eurus Exchange'
           ),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: kAppBarColor,
       ),
+      body: Padding(
+        padding: kDefaultPadding,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 60,
+              ),
+              Text(
+                'Home Page',
+                style: titleText,
+              ),
+            ],
+            ),
+          ),
+        ),
     );
   }
 }

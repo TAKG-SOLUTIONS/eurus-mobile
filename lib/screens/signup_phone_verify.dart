@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
-import '../widgets/checkbox.dart';
 import '../widgets/phone_no_verify.dart';
-import '../widgets/primary_button.dart';
-import '../widgets/signup_form.dart';
 
 class SignUpPhoneVerifyScreen extends StatelessWidget {
+  const SignUpPhoneVerifyScreen({Key key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.all(50.0),
+        title: const Padding(
+          padding: EdgeInsets.all(50.0),
           child: (
             Text(
               'Eurus Exchange'
             )
           ),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: kAppBarColor,
       ),
       body: Form(
         // key: formKey,
@@ -28,24 +25,35 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Padding(
                 padding: kDefaultPadding,
                 child: Text(
-                  'Enter Your Phone Number',
+                  'Phone Number',
                   style: titleText,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               
-              SizedBox(
+              Padding(
+                padding: kDefaultPadding,
+                child: Text(
+                  'Add your phone number. We\'ll send you a varificaton code.',
+                  style: subTitle,
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              
+              const SizedBox(
                 height: 10,
               ),
-              Padding(
+              const Padding(
                 padding: kDefaultPadding,
                 child: SignUpPhoneNoVerify(),
               ),
@@ -57,7 +65,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
               //   child: PrimaryButton(buttonText: 'Sign Up'),
               // ),
               
-              SizedBox(
+              const SizedBox(
                 height: 20,
               )
             ],

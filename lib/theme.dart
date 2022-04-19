@@ -7,15 +7,27 @@ const kWhiteColor = Color(0xFFFFFFFF);
 const kZambeziColor = Color(0xFF5B5B5B);
 const kBlackColor = Color(0xFF272726);
 const kTextFieldColor = Color(0xFF979797);
+const kAppBarColor = Color(0xFF414A4D);
 
 const kDefaultPadding = EdgeInsets.symmetric(horizontal: 30);
 
-TextStyle titleText =
-    const TextStyle(color: kPrimaryColor, fontSize: 32, fontWeight: FontWeight.w700);
+TextStyle titleText = const TextStyle(
+  color: kPrimaryColor, 
+  fontSize: 32, 
+  fontWeight: FontWeight.w700);
+
 TextStyle subTitle = const TextStyle(
-    color: kSecondaryColor, fontSize: 18, fontWeight: FontWeight.w500);
+  color: kSecondaryColor, 
+  fontSize: 18, 
+  fontWeight: FontWeight.w500);
+
 TextStyle textButton = const TextStyle(
-  color: kPrimaryColor,
+  color: kBlackColor,
   fontSize: 18,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w700,);
+
+TextStyle paratext = const TextStyle(
+  color: kBlackColor,
+  fontSize: 14,
+  fontWeight: FontWeight.w400
 );

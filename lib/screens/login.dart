@@ -1,22 +1,25 @@
+import 'reset_passoword.dart';
 import 'package:flutter/material.dart';
-import 'reset_password.dart';
 import 'signup.dart';
 import '../theme.dart';
 import '../widgets/login_form.dart';
-import '../widgets/primary_button.dart';
+import 'package:eurus_mobile/widgets/app_button_themes.dart';
+// import '../widgets/primary_button.dart';
 
 class LogInScreen extends StatelessWidget {
+  const LogInScreen({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Center(
+        title: const Center(
           child: Text(
             'Eurus Exchange'
           ),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: kAppBarColor,
       ),
       body: Padding(
         padding: kDefaultPadding,
@@ -24,49 +27,28 @@ class LogInScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 80,
+              const SizedBox(
+                height: 60,
               ),
               Text(
                 'Welcome!',
                 style: titleText,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Row(
-                children: [
-                  Text(
-                    'Don\'t have an account?',
-                    style: subTitle,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: textButton.copyWith(
-                        decoration: TextDecoration.underline,
-                        decorationThickness: 1,
-                      ),
-                    ),
-                  ),
-                ],
+              Text(
+                'Let\'s get started',
+                style: subTitle,
               ),
-              SizedBox(
-                height: 10,
+              
+              const SizedBox(
+                height: 5,
               ),
-              LogInForm(),
-              SizedBox(
+              
+              const LogInForm(),
+
+              const SizedBox(
                 height: 20,
               ),
               GestureDetector(
@@ -74,36 +56,60 @@ class LogInScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ResetPasswordScreen()));
+                          builder: (context) => const ResetPasswordScreen()));
                 },
-                child: Text(
-                  'Forgot password?',
-                  style: TextStyle(
-                    color: kZambeziColor,
-                    fontSize: 14,
-                    decoration: TextDecoration.underline,
-                    decorationThickness: 1,
+
+                child: const Center(
+                  child: Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      color: kZambeziColor,
+                      fontSize: 14,
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 1.5,
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
               
-              PrimaryButton(
-                buttonText: 'Log In',
+              const SizedBox(
+                height: 40,
               ),
 
-              // GestureDetector(
-              //   onTap: () {
-              //     Navigator.push(context, 
-              //     MaterialPageRoute(
-              //       builder: (context) => HomeScreen()));
-              //   },
-              //   child: PrimaryButton(
-              //     buttonText: 'Log In',
-              //   ),
-              // ),
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: subTitle,
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 10,
+              ),
+
+              Center(
+                child: ElevatedButton(
+                child: const Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      color: Colors.white, fontSize: 16
+                      ),
+                ),
+                
+                style: appPrimaryButton,
+
+                onPressed: () => { 
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignUpScreen()))               
+                },
+               ),
+              ),
+
             ],
           ),
         ),
