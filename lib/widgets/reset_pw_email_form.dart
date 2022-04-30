@@ -1,17 +1,17 @@
-import 'package:eurus_mobile/screens/login.dart';
+import 'package:eurus_mobile/screens/reset_pw_email_verify.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class ResetForm extends StatefulWidget {
-  const ResetForm({Key key}) : super(key: key);
+class ResetPwEmailForm extends StatefulWidget {
+  const ResetPwEmailForm({Key key}) : super(key: key);
 
   
   @override
-  _ResetFormState createState() => _ResetFormState();
+  _ResetPwEmailFormState createState() => _ResetPwEmailFormState();
 }
 
-class _ResetFormState extends State<ResetForm> {
+class _ResetPwEmailFormState extends State<ResetPwEmailForm> {
 
   String _email;
 
@@ -31,7 +31,7 @@ class _ResetFormState extends State<ResetForm> {
             
             ElevatedButton(
             child: const Text(
-              'Reset Password',
+              'Request Verify Code',
               style: TextStyle(
                 color: Colors.white, fontSize: 16
                 ),
@@ -49,7 +49,7 @@ class _ResetFormState extends State<ResetForm> {
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LogInScreen()))               
+                  MaterialPageRoute(builder: (context) => const ResetPwEmailVerifyScreen()))               
               },
             },
           ),

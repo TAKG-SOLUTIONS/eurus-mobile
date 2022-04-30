@@ -1,42 +1,41 @@
-import 'package:eurus_mobile/screens/home.dart';
-import 'package:eurus_mobile/screens/main_page.dart';
+import 'package:eurus_mobile/screens/reset_pw_success.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class LogInForm extends StatefulWidget {
-  const LogInForm({Key key}) : super(key: key);
+class ResetPwAddNewPw extends StatefulWidget {
+  const ResetPwAddNewPw({Key key}) : super(key: key);
 
   
   @override
-  _LogInFormState createState() => _LogInFormState();
+  _ResetPwAddNewPwState createState() => _ResetPwAddNewPwState();
 }
 
-class _LogInFormState extends State<LogInForm> {
+class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
 
-  String _email;
   String _password;
+  String _confirmPassword;
 
   bool _isObscure = true;
 
-  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _resetPwAddNewPwKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _loginFormKey,
+      key: _resetPwAddNewPwKey,
       child: Column(
         children: [
-          buildInputEmail('Email'),
-          buildInputPassword('Password', true),
+          buildInputPassword('New Password', true),
+          buildInputConfirmPassword('New Password Confirmation', true),
 
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             
             ElevatedButton(
             child: const Text(
-              'Login',
+              'Reset Password',
               style: TextStyle(
                 color: Colors.white, fontSize: 16
                 ),
@@ -45,17 +44,18 @@ class _LogInFormState extends State<LogInForm> {
             style: appPrimaryButton,
 
             onPressed: () => {
-              if(!_loginFormKey.currentState.validate()){
+              if(!_resetPwAddNewPwKey.currentState.validate()){
                 
               }
               else{
-                _loginFormKey.currentState.save(),
-                print(_email),
-                print(_password),  
+                _resetPwAddNewPwKey.currentState.save(),
+                print(_password),
+                print(_confirmPassword),
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MainScreen()))               
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ResetPwSuccessScreen())),
+
               },
             },
           ),
@@ -116,39 +116,61 @@ class _LogInFormState extends State<LogInForm> {
     );
   }
 
-  Padding buildInputEmail(String label) {
+
+  Padding buildInputConfirmPassword(String label, bool pass) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
+        obscureText: pass ? _isObscure : false,
         decoration: InputDecoration(
             labelText: label,
             labelStyle: const TextStyle(
-                color: Colors.black45
+              color: kTextFieldColor,
             ),
             focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: kPrimaryColor
-              ),
+              borderSide: BorderSide(color: kPrimaryColor),
             ),
-        ),
+            suffixIcon: pass
+                ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    },
+                    icon: _isObscure
+                        ? const Icon(
+                            Icons.visibility_off,
+                            color: kTextFieldColor,
+                          )
+                        : const Icon(
+                            Icons.visibility,
+                            color: kPrimaryColor,
+                          ),
+                  )
+                : null),
 
-      validator: (String value){
-        if(value == null || value.isEmpty){
-          return 'Email is Required';
-        }
+              validator: (String value){
+                if(value == null || value.isEmpty){
+                  return 'Password is Required';
+                }
+                
+                if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
+                  return 'Enter valid password';
+                }
 
-        if(!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(value)) {
-          return 'Please enter a valid email address';
-        }
-        return null;
-      },
-      
-      onSaved: (String value){
-        _email = value;
-      },
+                if(_password != value){
+                  return 'Password does not match';
+                }
+
+                return null;
+              },
+              
+              onSaved: (String value){
+                _confirmPassword = value;
+              },
 
       ),
     );
   }
+
 }

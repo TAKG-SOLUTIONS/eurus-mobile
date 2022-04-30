@@ -16,10 +16,20 @@ TextStyle titleText = const TextStyle(
   fontSize: 32, 
   fontWeight: FontWeight.w700);
 
+TextStyle secondTitleText = const TextStyle(
+  color: kPrimaryColor, 
+  fontSize: 26, 
+  fontWeight: FontWeight.w600);
+
 TextStyle subTitle = const TextStyle(
   color: kSecondaryColor, 
   fontSize: 18, 
   fontWeight: FontWeight.w500);
+
+TextStyle subLineText = const TextStyle(
+  color: kSecondaryColor, 
+  fontSize: 14, 
+  fontWeight: FontWeight.w400);
 
 TextStyle textButton = const TextStyle(
   color: kBlackColor,

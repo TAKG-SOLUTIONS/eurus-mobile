@@ -1,9 +1,7 @@
 import 'dart:ffi';
-
 import 'package:eurus_mobile/screens/phone_otp_verify.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import '../theme.dart';
 
 // import 'checkbox.dart';
@@ -24,7 +22,7 @@ class _SignUpPhoneOtpVerifyState extends State<SignUpPhoneOtpVerify> {
 
 final GlobalKey<FormState> _otpFormState = GlobalKey<FormState>();
 
-var otpArr = new Array(4);
+var otpArr = const Array(4);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +76,7 @@ var otpArr = new Array(4);
 
   Widget buildOTPCode({bool first, last}) {
     return SizedBox(
-      height: 70,
+      height: 80,
       child: AspectRatio(
         aspectRatio: 1.0,
         child: TextField(
@@ -96,16 +94,16 @@ var otpArr = new Array(4);
           showCursor: false,
           readOnly: false,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           keyboardType: TextInputType.number,
           maxLength: 1,
           decoration: InputDecoration(
-            counter: Offstage(),
+            counter: const Offstage(),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.black12),
+                borderSide: const BorderSide(width: 2, color: Colors.black12),
                 borderRadius: BorderRadius.circular(12)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.purple),
+                borderSide: const BorderSide(width: 2, color: Colors.purple),
                 borderRadius: BorderRadius.circular(12)),
           ),
         ),

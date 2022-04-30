@@ -1,4 +1,4 @@
-import 'reset_passoword.dart';
+import 'reset_pw_email_enter.dart';
 import 'package:flutter/material.dart';
 import 'signup.dart';
 import '../theme.dart';
@@ -56,7 +56,7 @@ class LogInScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ResetPasswordScreen()));
+                          builder: (context) => const ResetPasswordEmailScreen()));
                 },
 
                 child: const Center(

@@ -1,7 +1,7 @@
-import 'package:eurus_mobile/widgets/phone_otp.dart';
+import 'package:eurus_mobile/widgets/phone_otp_form.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
-import '../widgets/phone_no_verify.dart';
+import '../widgets/phone_no_verify_form.dart';
 
 class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
   const SignUpPhoneOtpVerifyScreen({Key key}) : super(key: key);

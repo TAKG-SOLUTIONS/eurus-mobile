@@ -1,10 +1,9 @@
-import 'package:eurus_mobile/widgets/reset_form.dart';
+import 'package:eurus_mobile/widgets/reset_pw_email_verify_form.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
-// import '../widgets/primary_button.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({Key key}) : super(key: key);
+class ResetPwEmailVerifyScreen extends StatelessWidget {
+  const ResetPwEmailVerifyScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +19,8 @@ class ResetPasswordScreen extends StatelessWidget {
         ),
         backgroundColor: kAppBarColor,
       ),
-
-      body: Padding(
-        padding: kDefaultPadding,
+      body: Form(
+        // key: formKey,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,24 +28,38 @@ class ResetPasswordScreen extends StatelessWidget {
               const SizedBox(
                 height: 60,
               ),
-              Text(
-                'Reset Passowrd',
-                style: titleText,
+              Padding(
+                padding: kDefaultPadding,
+                child: Text(
+                  'Reset Password',
+                  style: titleText,
+                ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                'Please enter your email address',
-                style: subTitle,
-              ),
-              
-              const SizedBox(
-                height: 5,
-              ),
-              
-              const ResetForm(),
 
+              Padding(
+                padding: kDefaultPadding,
+                child: Text(
+                'Please check your email and enter the verification code here.',
+                style: subTitle,
+                )
+              ),
+
+              
+              const SizedBox(
+                height: 20,
+              ),
+              
+              const Padding(
+                padding: kDefaultPadding,
+                child: ResetPwEmailVerify(),
+              ),
+              
+              const SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),

@@ -9,22 +9,22 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Center(
-          child: Text(
-            'Eurus Exchange'
-          ),
-        ),
-        backgroundColor: kAppBarColor,
-      ),
+      //   appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   title: const Center(
+      //     child: Text(
+      //       'Home'
+      //     ),
+      //   ),
+      //   backgroundColor: kAppBarColor,
+      // ),
       body: Padding(
         padding: kDefaultPadding,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Text(
