@@ -1,0 +1,47 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - features-user-authentication
+
+jobs:
+  build:
+    # This job will run on ubuntu virtual machine
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out code 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Java environment in order to build the Android app.
+        uses: actions/setup-java@v1
+        with:
+          distribution: 'microsoft'
+          java-version: '11'
+
+      - name: Setup the flutter environment.
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.10.5'
+          channel: 'stable'
+
+      - name: Restore dependencies 🛠
+        run: flutter pub get
+
+      - name: Check for any formatting issues in the code.
+        run: flutter format --set-exit-if-changed .
+
+      - name: Statically analyze the Dart code for any errors.
+        run: flutter analyze .
+
+      - name: Run widget tests and generate code coverage
+        run: flutter test --coverage
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          file: coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+
