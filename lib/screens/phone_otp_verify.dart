@@ -1,7 +1,7 @@
 import 'package:eurus_mobile/widgets/phone_otp_form.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
-import '../widgets/phone_no_verify_form.dart';
+import '../constants.dart' as constants;
 
 class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
   const SignUpPhoneOtpVerifyScreen({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
           padding: EdgeInsets.all(50.0),
           child: (
             Text(
-              'Eurus Exchange'
+              constants.APPLICATION_NAME
             )
           ),
         ),

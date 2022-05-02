@@ -1,4 +1,3 @@
-import 'package:eurus_mobile/screens/home.dart';
 import 'package:eurus_mobile/screens/main_page.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';

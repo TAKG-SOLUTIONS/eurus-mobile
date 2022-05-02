@@ -1,8 +1,8 @@
 import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key key }) : super(key: key);
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({ Key key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
                 height: 60,
               ),
               Text(
-                'Home Page',
+                'Profile Page',
                 style: titleText,
               ),
             ],

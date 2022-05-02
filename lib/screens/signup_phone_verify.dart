@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../widgets/phone_no_verify_form.dart';
+import '../constants.dart' as constants;
 
 class SignUpPhoneVerifyScreen extends StatelessWidget {
   const SignUpPhoneVerifyScreen({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
           padding: EdgeInsets.all(50.0),
           child: (
             Text(
-              'Eurus Exchange'
+              constants.APPLICATION_NAME
             )
           ),
         ),

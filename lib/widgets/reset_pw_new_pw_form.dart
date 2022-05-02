@@ -157,10 +157,10 @@ class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
                 if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
                   return 'Enter valid password';
                 }
-
-                if(_password != value){
-                  return 'Password does not match';
-                }
+                // TODO: Fix Password comparison
+                // if(_password != value){
+                //   return 'Password does not match';
+                // }
 
                 return null;
               },

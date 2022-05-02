@@ -1,6 +1,7 @@
 import 'package:eurus_mobile/widgets/reset_pw_new_pw_form.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
+import '../constants.dart' as constants;
 
 // import '../widgets/primary_button.dart';
 
@@ -14,7 +15,7 @@ class ResetPwAddNewPwScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            'Eurus Exchange'
+            constants.APPLICATION_NAME
           ),
         ),
         backgroundColor: kAppBarColor,

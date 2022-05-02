@@ -1,3 +1,5 @@
+import '../constants.dart' as constants;
+
 import 'reset_pw_email_enter.dart';
 import 'package:flutter/material.dart';
 import 'signup.dart';
@@ -16,7 +18,7 @@ class LogInScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Center(
           child: Text(
-            'Eurus Exchange'
+            constants.APPLICATION_NAME
           ),
         ),
         backgroundColor: kAppBarColor,

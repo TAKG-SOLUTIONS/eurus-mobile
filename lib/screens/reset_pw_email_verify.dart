@@ -1,6 +1,7 @@
 import 'package:eurus_mobile/widgets/reset_pw_email_verify_form.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
+import '../constants.dart' as constants;
 
 class ResetPwEmailVerifyScreen extends StatelessWidget {
   const ResetPwEmailVerifyScreen({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class ResetPwEmailVerifyScreen extends StatelessWidget {
           padding: EdgeInsets.all(50.0),
           child: (
             Text(
-              'Eurus Exchange'
+              constants.APPLICATION_NAME
             )
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:eurus_mobile/screens/login.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
+import '../constants.dart' as constants;
 
 class ResetPwSuccessScreen extends StatelessWidget {
   const ResetPwSuccessScreen({Key key}) : super(key: key);
@@ -14,7 +15,7 @@ class ResetPwSuccessScreen extends StatelessWidget {
           padding: EdgeInsets.all(50.0),
           child: (
             Text(
-              'Eurus Exchange'
+              constants.APPLICATION_NAME
             )
           ),
         ),

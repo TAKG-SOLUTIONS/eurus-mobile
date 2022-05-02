@@ -13,7 +13,8 @@ class ExchangeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: LogInScreen(),
+      home: const LogInScreen(),
     );
   }
+
 }

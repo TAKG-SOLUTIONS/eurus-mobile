@@ -4,12 +4,12 @@ import '../theme.dart';
 // import '../widgets/checkbox.dart';
 // import '../widgets/primary_button.dart';
 import '../widgets/signup_form.dart';
+import '../constants.dart' as constants;
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key key}) : super(key: key);
 
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class SignUpScreen extends StatelessWidget {
           padding: EdgeInsets.all(50.0),
           child: (
             Text(
-              'Eurus Exchange'
+              constants.APPLICATION_NAME
             )
           ),
         ),
