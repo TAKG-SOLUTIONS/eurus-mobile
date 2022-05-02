@@ -20,9 +20,9 @@ class _SignUpPhoneOtpVerifyState extends State<SignUpPhoneOtpVerify> {
 
   // bool _isObscure = true;
 
-final GlobalKey<FormState> _otpFormState = GlobalKey<FormState>();
+  final GlobalKey<FormState> _otpFormState = GlobalKey<FormState>();
 
-var otpArr = const Array(4);
+  var otpArr = const Array(4);
 
   @override
   Widget build(BuildContext context) {
@@ -39,34 +39,28 @@ var otpArr = const Array(4);
               buildOTPCode(first: false, last: true),
             ],
           ),
-
-            const SizedBox(
-              height: 20,
-            ),
-
-            ElevatedButton(
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
             child: const Text(
               'Verify',
-              style: TextStyle(
-                color: Colors.white, fontSize: 16
-                ),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
-            
             style: appPrimaryButton,
-
             onPressed: () => {
-              if(!_otpFormState.currentState.validate()){
-
-              }
-              else{
-                _otpFormState.currentState.save(),
-                print(_valuesOTP),
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignUpPhoneOtpVerifyScreen()))
-
-              }
+              if (!_otpFormState.currentState.validate())
+                {}
+              else
+                {
+                  _otpFormState.currentState.save(),
+                  print(_valuesOTP),
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const SignUpPhoneOtpVerifyScreen()))
+                }
             },
           ),
         ],
@@ -82,14 +76,12 @@ var otpArr = const Array(4);
         child: TextField(
           autofocus: true,
           onChanged: (value) {
-            
             if (value.length == 1 && last == false) {
               FocusScope.of(context).nextFocus();
             }
             if (value.isEmpty && first == false) {
               FocusScope.of(context).previousFocus();
             }
-
           },
           showCursor: false,
           readOnly: false,
@@ -110,6 +102,4 @@ var otpArr = const Array(4);
       ),
     );
   }
-
 }
-

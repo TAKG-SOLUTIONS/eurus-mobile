@@ -12,11 +12,7 @@ class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -41,18 +37,16 @@ class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
               ),
 
               Padding(
-                padding: kDefaultPadding,
-                child: Text(
-                'Enter your OTP code number',
-                style: subTitle,
-                )
-              ),
+                  padding: kDefaultPadding,
+                  child: Text(
+                    'Enter your OTP code number',
+                    style: subTitle,
+                  )),
 
-              
               const SizedBox(
                 height: 20,
               ),
-              
+
               const Padding(
                 padding: kDefaultPadding,
                 child: SignUpPhoneOtpVerify(),
@@ -66,8 +60,6 @@ class SignUpPhoneOtpVerifyScreen extends StatelessWidget {
               //   child: PrimaryButton(buttonText: 'Sign Up'),
               // ),
 
-
-              
               const SizedBox(
                 height: 20,
               )

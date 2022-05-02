@@ -14,9 +14,7 @@ class ResetPwAddNewPwScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Center(
-          child: Text(
-            constants.APPLICATION_NAME
-          ),
+          child: Text(constants.APPLICATION_NAME),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -40,17 +38,13 @@ class ResetPwAddNewPwScreen extends StatelessWidget {
                 'Enter your new password.',
                 style: subTitle,
               ),
-              
               const SizedBox(
                 height: 10,
               ),
-              
               const ResetPwAddNewPw(),
-
               const SizedBox(
                 height: 20,
               ),
-
             ],
           ),
         ),

@@ -12,11 +12,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -39,7 +35,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              
+
               Padding(
                 padding: kDefaultPadding,
                 child: Text(
@@ -50,7 +46,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              
+
               const SizedBox(
                 height: 10,
               ),
@@ -65,7 +61,7 @@ class SignUpPhoneVerifyScreen extends StatelessWidget {
               //   padding: kDefaultPadding,
               //   child: PrimaryButton(buttonText: 'Sign Up'),
               // ),
-              
+
               const SizedBox(
                 height: 20,
               )

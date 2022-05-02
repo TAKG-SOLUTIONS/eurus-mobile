@@ -6,13 +6,11 @@ import '../theme.dart';
 class ResetPwAddNewPw extends StatefulWidget {
   const ResetPwAddNewPw({Key key}) : super(key: key);
 
-  
   @override
   _ResetPwAddNewPwState createState() => _ResetPwAddNewPwState();
 }
 
 class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
-
   String _password;
   String _confirmPassword;
 
@@ -28,38 +26,30 @@ class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
         children: [
           buildInputPassword('New Password', true),
           buildInputConfirmPassword('New Password Confirmation', true),
-
-            const SizedBox(
-              height: 30,
-            ),
-            
-            ElevatedButton(
+          const SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
             child: const Text(
               'Reset Password',
-              style: TextStyle(
-                color: Colors.white, fontSize: 16
-                ),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
-            
             style: appPrimaryButton,
-
             onPressed: () => {
-              if(!_resetPwAddNewPwKey.currentState.validate()){
-                
-              }
-              else{
-                _resetPwAddNewPwKey.currentState.save(),
-                print(_password),
-                print(_confirmPassword),
-
+              if (!_resetPwAddNewPwKey.currentState.validate())
+                {}
+              else
+                {
+                  _resetPwAddNewPwKey.currentState.save(),
+                  print(_password),
+                  print(_confirmPassword),
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ResetPwSuccessScreen())),
-
-              },
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ResetPwSuccessScreen())),
+                },
             },
           ),
-    
         ],
       ),
     );
@@ -96,26 +86,24 @@ class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
                           ),
                   )
                 : null),
+        validator: (String value) {
+          if (value == null || value.isEmpty) {
+            return 'Password is Required';
+          }
 
-              validator: (String value){
-                if(value == null || value.isEmpty){
-                  return 'Password is Required';
-                }
-                
-                if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
-                  return 'Enter valid password';
-                }
-                return null;
-              },
-              
-              onSaved: (String value){
-                _password = value;
-              },
-
+          if (!RegExp(
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+              .hasMatch(value)) {
+            return 'Enter valid password';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _password = value;
+        },
       ),
     );
   }
-
 
   Padding buildInputConfirmPassword(String label, bool pass) {
     return Padding(
@@ -148,29 +136,27 @@ class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
                           ),
                   )
                 : null),
+        validator: (String value) {
+          if (value == null || value.isEmpty) {
+            return 'Password is Required';
+          }
 
-              validator: (String value){
-                if(value == null || value.isEmpty){
-                  return 'Password is Required';
-                }
-                
-                if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
-                  return 'Enter valid password';
-                }
-                // TODO: Fix Password comparison
-                // if(_password != value){
-                //   return 'Password does not match';
-                // }
+          if (!RegExp(
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+              .hasMatch(value)) {
+            return 'Enter valid password';
+          }
+          // TODO: Fix Password comparison
+          // if(_password != value){
+          //   return 'Password does not match';
+          // }
 
-                return null;
-              },
-              
-              onSaved: (String value){
-                _confirmPassword = value;
-              },
-
+          return null;
+        },
+        onSaved: (String value) {
+          _confirmPassword = value;
+        },
       ),
     );
   }
-
 }

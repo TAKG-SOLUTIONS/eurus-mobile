@@ -13,11 +13,7 @@ class ResetPwSuccessScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -40,43 +36,33 @@ class ResetPwSuccessScreen extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-
               Padding(
-                padding: kDefaultPadding,
-                child: Text(
-                'Your password has been changed successfully.',
-                style: subLineText,
-                )
-              ),
-
-              
+                  padding: kDefaultPadding,
+                  child: Text(
+                    'Your password has been changed successfully.',
+                    style: subLineText,
+                  )),
               const SizedBox(
                 height: 20,
               ),
-
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                child: const Text(
-                  'Back to Login',
-                  style: TextStyle(
-                    color: Colors.white, fontSize: 16
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Back to Login',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
+                    style: appPrimaryButton,
+                    onPressed: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LogInScreen()))
+                    },
+                  ),
                 ),
-                
-                style: appPrimaryButton,
-
-                onPressed: () => { 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const LogInScreen()))               
-                  },
-          ),
               ),
-            ),
-
-              
               const SizedBox(
                 height: 20,
               )

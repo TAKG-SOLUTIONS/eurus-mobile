@@ -16,5 +16,4 @@ class ExchangeApp extends StatelessWidget {
       home: const LogInScreen(),
     );
   }
-
 }

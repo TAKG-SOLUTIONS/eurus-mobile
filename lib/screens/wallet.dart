@@ -2,7 +2,7 @@ import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
 class WalletsScreen extends StatelessWidget {
-  const WalletsScreen({ Key key }) : super(key: key);
+  const WalletsScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class WalletsScreen extends StatelessWidget {
                 style: titleText,
               ),
             ],
-            ),
           ),
         ),
+      ),
     );
   }
 }

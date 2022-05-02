@@ -44,3 +44,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Code Coverage Report
+coverage
+
+# Flutter version manager
+.fvm

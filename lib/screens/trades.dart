@@ -2,7 +2,7 @@ import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
 class TradesScreen extends StatelessWidget {
-  const TradesScreen({ Key key }) : super(key: key);
+  const TradesScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class TradesScreen extends StatelessWidget {
                 style: titleText,
               ),
             ],
-            ),
           ),
         ),
+      ),
     );
   }
 }

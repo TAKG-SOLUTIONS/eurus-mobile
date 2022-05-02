@@ -23,7 +23,7 @@ class _SignUpFormState extends State<SignUpForm> {
   bool _isObscure = true;
   bool _isChecked = false;
 
-final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,47 +33,37 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
         children: [
           buildInputEmail('Email'),
           buildInputPassword('Password', true),
-
-            const SizedBox(
-              height: 20,
-            ),
-            
-            CheckBox(
-              'Agree to terms and conditions.'
-              ),
-            const SizedBox(
-              height: 20,
-            ),
-            CheckBox(
-              'I have at least 18 years old.'
-              ),
-            const SizedBox(
-              height: 20,
-            ),
-
-            ElevatedButton(
+          const SizedBox(
+            height: 20,
+          ),
+          CheckBox('Agree to terms and conditions.'),
+          const SizedBox(
+            height: 20,
+          ),
+          CheckBox('I have at least 18 years old.'),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
             child: const Text(
               'Next',
-              style: TextStyle(
-                color: Colors.white, fontSize: 16
-                ),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
-            
             style: appPrimaryButton,
-            
             onPressed: () => {
-              if(!_signFormKey.currentState.validate()){
-                
-              }
-              else{
-                _signFormKey.currentState.save(),
-                print(_email),
-                print(_password),  
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignUpPhoneVerifyScreen()))               
-              },
+              if (!_signFormKey.currentState.validate())
+                {}
+              else
+                {
+                  _signFormKey.currentState.save(),
+                  print(_email),
+                  print(_password),
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const SignUpPhoneVerifyScreen()))
+                },
             },
           ),
         ],
@@ -112,22 +102,21 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
                           ),
                   )
                 : null),
+        validator: (String value) {
+          if (value == null || value.isEmpty) {
+            return 'Password is Required';
+          }
 
-              validator: (String value){
-                if(value == null || value.isEmpty){
-                  return 'Password is Required';
-                }
-                
-                if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value)){
-                  return 'Enter valid password';
-                }
-                return null;
-              },
-              
-              onSaved: (String value){
-                _password = value;
-              },
-
+          if (!RegExp(
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+              .hasMatch(value)) {
+            return 'Enter valid password';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _password = value;
+        },
       ),
     );
   }
@@ -137,35 +126,28 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
         decoration: InputDecoration(
-            labelText: label,
-            labelStyle: const TextStyle(
-                color: Colors.black45
-            ),
-            focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: kPrimaryColor
-              ),
-            ),
+          labelText: label,
+          labelStyle: const TextStyle(color: Colors.black45),
+          focusedBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: kPrimaryColor),
+          ),
         ),
+        validator: (String value) {
+          if (value == null || value.isEmpty) {
+            return 'Email is Required';
+          }
 
-      validator: (String value){
-        if(value == null || value.isEmpty){
-          return 'Email is Required';
-        }
-
-        if(!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(value)) {
-          return 'Please enter a valid email address';
-        }
-        return null;
-      },
-      
-      onSaved: (String value){
-        _email = value;
-      },
-
+          if (!RegExp(
+                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              .hasMatch(value)) {
+            return 'Please enter a valid email address';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _email = value;
+        },
       ),
     );
   }
-
 }

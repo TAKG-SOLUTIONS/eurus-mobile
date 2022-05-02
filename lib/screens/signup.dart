@@ -9,18 +9,13 @@ import '../constants.dart' as constants;
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -79,7 +74,7 @@ class SignUpScreen extends StatelessWidget {
                 padding: kDefaultPadding,
                 child: SignUpForm(),
               ),
-              
+
               // SizedBox(
               //   height: 20,
               // ),
@@ -87,7 +82,7 @@ class SignUpScreen extends StatelessWidget {
               //   padding: kDefaultPadding,
               //   child: PrimaryButton(buttonText: 'Sign Up'),
               // ),
-              
+
               const SizedBox(
                 height: 20,
               )

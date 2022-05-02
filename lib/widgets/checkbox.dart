@@ -7,13 +7,11 @@ class CheckBox extends StatefulWidget {
   const CheckBox(this.text, {Key key}) : super(key: key);
   @override
   _CheckBoxState createState() => _CheckBoxState();
-  
-
 }
 
 class _CheckBoxState extends State<CheckBox> {
   bool _isSelected = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,14 +50,12 @@ class _CheckBoxState extends State<CheckBox> {
   }
 }
 
-
 // class CheckBox extends StatefulWidget {
 //   final String text;
 
 //   const CheckBox(this.text, {Key key}) : super(key: key);
 //   @override
 //   _CheckBoxState createState() => _CheckBoxState();
-  
 
 // }
 
@@ -74,7 +70,7 @@ class _CheckBoxState extends State<CheckBox> {
 //         Row(
 //           children: [
 //             Checkbox(
-//               value: _isChecked, 
+//               value: _isChecked,
 //               onChanged: (bool bValue){
 //                 setState(() {
 //                   _isChecked = bValue;

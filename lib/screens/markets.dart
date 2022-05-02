@@ -2,7 +2,7 @@ import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
 class MarketScreen extends StatelessWidget {
-  const MarketScreen({ Key key }) : super(key: key);
+  const MarketScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class MarketScreen extends StatelessWidget {
                 style: titleText,
               ),
             ],
-            ),
           ),
         ),
+      ),
     );
   }
 }

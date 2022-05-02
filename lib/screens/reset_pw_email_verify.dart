@@ -12,11 +12,7 @@ class ResetPwEmailVerifyScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -39,25 +35,19 @@ class ResetPwEmailVerifyScreen extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-
               Padding(
-                padding: kDefaultPadding,
-                child: Text(
-                'Please check your email and enter the verification code here.',
-                style: subTitle,
-                )
-              ),
-
-              
+                  padding: kDefaultPadding,
+                  child: Text(
+                    'Please check your email and enter the verification code here.',
+                    style: subTitle,
+                  )),
               const SizedBox(
                 height: 20,
               ),
-              
               const Padding(
                 padding: kDefaultPadding,
                 child: ResetPwEmailVerify(),
               ),
-              
               const SizedBox(
                 height: 20,
               )

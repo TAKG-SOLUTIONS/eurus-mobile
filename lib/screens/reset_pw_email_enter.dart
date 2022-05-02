@@ -13,15 +13,10 @@ class ResetPasswordEmailScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Padding(
           padding: EdgeInsets.all(50.0),
-          child: (
-            Text(
-              constants.APPLICATION_NAME
-            )
-          ),
+          child: (Text(constants.APPLICATION_NAME)),
         ),
         backgroundColor: kAppBarColor,
       ),
-
       body: Padding(
         padding: kDefaultPadding,
         child: SingleChildScrollView(
@@ -42,13 +37,10 @@ class ResetPasswordEmailScreen extends StatelessWidget {
                 'Please enter your email address',
                 style: subTitle,
               ),
-              
               const SizedBox(
                 height: 5,
               ),
-              
               const ResetPwEmailForm(),
-
             ],
           ),
         ),

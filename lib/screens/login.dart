@@ -17,9 +17,7 @@ class LogInScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Center(
-          child: Text(
-            constants.APPLICATION_NAME
-          ),
+          child: Text(constants.APPLICATION_NAME),
         ),
         backgroundColor: kAppBarColor,
       ),
@@ -43,13 +41,10 @@ class LogInScreen extends StatelessWidget {
                 'Let\'s get started',
                 style: subTitle,
               ),
-              
               const SizedBox(
                 height: 5,
               ),
-              
               const LogInForm(),
-
               const SizedBox(
                 height: 20,
               ),
@@ -58,9 +53,9 @@ class LogInScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ResetPasswordEmailScreen()));
+                          builder: (context) =>
+                              const ResetPasswordEmailScreen()));
                 },
-
                 child: const Center(
                   child: Text(
                     'Forgot password?',
@@ -73,11 +68,9 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              
               const SizedBox(
                 height: 40,
               ),
-
               Center(
                 child: Column(
                   children: [
@@ -88,30 +81,24 @@ class LogInScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 10,
               ),
-
               Center(
                 child: ElevatedButton(
-                child: const Text(
+                  child: const Text(
                     'Sign Up',
-                    style: TextStyle(
-                      color: Colors.white, fontSize: 16
-                      ),
-                ),
-                
-                style: appPrimaryButton,
-
-                onPressed: () => { 
-                      Navigator.push(
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  style: appPrimaryButton,
+                  onPressed: () => {
+                    Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const SignUpScreen()))               
-                },
-               ),
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpScreen()))
+                  },
+                ),
               ),
-
             ],
           ),
         ),
