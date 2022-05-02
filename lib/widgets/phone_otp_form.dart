@@ -1,8 +1,9 @@
 import 'dart:ffi';
+
 import 'package:eurus_mobile/screens/phone_otp_verify.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
-import '../theme.dart';
+import 'package:loggy/loggy.dart';
 
 // import 'checkbox.dart';
 
@@ -54,7 +55,7 @@ class _SignUpPhoneOtpVerifyState extends State<SignUpPhoneOtpVerify> {
               else
                 {
                   _otpFormState.currentState.save(),
-                  print(_valuesOTP),
+                  logInfo(_valuesOTP),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

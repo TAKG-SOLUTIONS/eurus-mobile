@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
+
 import 'screens/login.dart';
 
 void main() {
+  Loggy.initLoggy(
+    logPrinter: const PrettyPrinter(
+      showColors: true,
+    ),
+    logOptions: const LogOptions(
+      LogLevel.all,
+      stackTraceLevel: LogLevel.off,
+    ),
+  );
+
   runApp(const ExchangeApp());
 }
 

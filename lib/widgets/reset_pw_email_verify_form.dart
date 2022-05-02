@@ -1,8 +1,9 @@
 import 'dart:ffi';
+
 import 'package:eurus_mobile/screens/reset_pw_set_new_pw.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
-import '../theme.dart';
+import 'package:loggy/loggy.dart';
 
 // import 'checkbox.dart';
 
@@ -54,7 +55,7 @@ class _ResetPwEmailVerifyState extends State<ResetPwEmailVerify> {
               else
                 {
                   _otpFormState.currentState.save(),
-                  print(_valuesOTP),
+                  logInfo(_valuesOTP),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

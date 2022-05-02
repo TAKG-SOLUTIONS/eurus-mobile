@@ -5,7 +5,7 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:eurus_mobile/constants.dart' as Constants;
+import 'package:eurus_mobile/constants.dart' as constants;
 import 'package:eurus_mobile/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -14,6 +14,6 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const ExchangeApp());
 
-    expect(find.text(Constants.APPLICATION_NAME), findsOneWidget);
+    expect(find.text(constants.APPLICATION_NAME), findsOneWidget);
   });
 }

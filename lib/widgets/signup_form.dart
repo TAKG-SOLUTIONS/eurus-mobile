@@ -1,9 +1,9 @@
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
+import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
 
 import '../screens/signup_phone_verify.dart';
-import 'package:flutter/material.dart';
 import '../theme.dart';
-
 import 'checkbox.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -18,10 +18,12 @@ class SignUpForm extends StatefulWidget {
 class _SignUpFormState extends State<SignUpForm> {
   String _email;
   String _password;
+
   // String _phoneNumber;
 
   bool _isObscure = true;
-  bool _isChecked = false;
+
+  // bool _isChecked = false;
 
   final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
 
@@ -36,11 +38,11 @@ class _SignUpFormState extends State<SignUpForm> {
           const SizedBox(
             height: 20,
           ),
-          CheckBox('Agree to terms and conditions.'),
+          const CheckBox('Agree to terms and conditions.'),
           const SizedBox(
             height: 20,
           ),
-          CheckBox('I have at least 18 years old.'),
+          const CheckBox('I have at least 18 years old.'),
           const SizedBox(
             height: 20,
           ),
@@ -56,8 +58,8 @@ class _SignUpFormState extends State<SignUpForm> {
               else
                 {
                   _signFormKey.currentState.save(),
-                  print(_email),
-                  print(_password),
+                  logInfo(_email),
+                  logInfo(_password),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

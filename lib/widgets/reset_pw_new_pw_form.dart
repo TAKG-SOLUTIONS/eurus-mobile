@@ -1,6 +1,8 @@
 import 'package:eurus_mobile/screens/reset_pw_success.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
+
 import '../theme.dart';
 
 class ResetPwAddNewPw extends StatefulWidget {
@@ -41,8 +43,8 @@ class _ResetPwAddNewPwState extends State<ResetPwAddNewPw> {
               else
                 {
                   _resetPwAddNewPwKey.currentState.save(),
-                  print(_password),
-                  print(_confirmPassword),
+                  logInfo(_password),
+                  logInfo(_confirmPassword),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

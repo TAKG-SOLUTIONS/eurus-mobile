@@ -1,6 +1,8 @@
 import 'package:eurus_mobile/screens/main_page.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
+
 import '../theme.dart';
 
 class LogInForm extends StatefulWidget {
@@ -41,8 +43,8 @@ class _LogInFormState extends State<LogInForm> {
               else
                 {
                   _loginFormKey.currentState.save(),
-                  print(_email),
-                  print(_password),
+                  logInfo(_email),
+                  logInfo(_password),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

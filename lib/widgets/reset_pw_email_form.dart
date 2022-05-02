@@ -1,6 +1,8 @@
 import 'package:eurus_mobile/screens/reset_pw_email_verify.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:loggy/loggy.dart';
+
 import '../theme.dart';
 
 class ResetPwEmailForm extends StatefulWidget {
@@ -37,7 +39,7 @@ class _ResetPwEmailFormState extends State<ResetPwEmailForm> {
               else
                 {
                   _resetFormKey.currentState.save(),
-                  print(_email),
+                  logInfo(_email),
                   Navigator.push(
                       context,
                       MaterialPageRoute(

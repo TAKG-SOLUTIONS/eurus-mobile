@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../theme.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String buttonText;
-  PrimaryButton({@required this.buttonText});
+
+  const PrimaryButton({Key key, @required this.buttonText}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +14,8 @@ class PrimaryButton extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.08,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14), color: Color(0xff276EF1)),
+          borderRadius: BorderRadius.circular(14),
+          color: const Color(0xff276EF1)),
       child: Text(
         buttonText,
         style: textButton.copyWith(color: kWhiteColor),

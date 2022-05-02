@@ -2,6 +2,8 @@ import 'package:eurus_mobile/screens/phone_otp_verify.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:loggy/loggy.dart';
+
 import '../theme.dart';
 
 // import 'checkbox.dart';
@@ -44,7 +46,7 @@ class _SignUpPhoneNoVerifyState extends State<SignUpPhoneNoVerify> {
               else
                 {
                   _signFormKey.currentState.save(),
-                  print(_phoneNumber),
+                  logInfo(_phoneNumber),
                   Navigator.push(
                       context,
                       MaterialPageRoute(
