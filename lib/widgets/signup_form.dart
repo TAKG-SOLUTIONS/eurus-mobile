@@ -38,13 +38,13 @@ final GlobalKey<FormState> _signFormKey = GlobalKey<FormState>();
               height: 20,
             ),
             
-            CheckBox(
+            const CheckBox(
               'Agree to terms and conditions.'
               ),
             const SizedBox(
               height: 20,
             ),
-            CheckBox(
+            const CheckBox(
               'I have at least 18 years old.'
               ),
             const SizedBox(

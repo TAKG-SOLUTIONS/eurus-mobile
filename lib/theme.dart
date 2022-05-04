@@ -13,53 +13,58 @@ const kAppBarColor = Color(0xFF414A4D);
 const kDefaultPadding = EdgeInsets.symmetric(horizontal: 30);
 
 TextStyle titleText = const TextStyle(
-  color: kPrimaryColor,
-  fontFamily: 'Poppins', 
-  fontSize: 32, 
-  fontWeight: FontWeight.w800);
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 32,
+    fontWeight: FontWeight.w800);
 
 TextStyle secondTitleText = const TextStyle(
-  color: kPrimaryColor,
-  fontFamily: 'Poppins', 
-  fontSize: 26, 
-  fontWeight: FontWeight.w700);
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 26,
+    fontWeight: FontWeight.w700);
 
 TextStyle subTitle = const TextStyle(
-  color: kSecondaryColor,
-  fontFamily: 'Poppins', 
-  fontSize: 18, 
-  fontWeight: FontWeight.w600);
+    color: kSecondaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w600);
 
 TextStyle subLineText = const TextStyle(
-  color: kSecondaryColor,
-  fontFamily: 'Poppins', 
-  fontSize: 14, 
-  fontWeight: FontWeight.w500);
+    color: kSecondaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeight: FontWeight.w500);
 
 TextStyle miniLineText = const TextStyle(
-  color: kPrimaryColor,
-  fontFamily: 'Poppins', 
-  fontSize: 12, 
-  fontWeight: FontWeight.w400);
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 12,
+    fontWeight: FontWeight.w400);
 
 TextStyle textButton = const TextStyle(
-  color: kBlackColor,
-  fontFamily: 'Poppins',
-  fontSize: 18,
-  fontWeight: FontWeight.w700);
+    color: kBlackColor,
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w700);
 
 TextStyle textLightButton = const TextStyle(
-  color: kBlackColor,
-  fontFamily: 'Poppins',
-  fontSize: 14,
-  fontWeight: FontWeight.w500);
+    color: kBlackColor,
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeight: FontWeight.w500);
 
 TextStyle paratext = const TextStyle(
-  color: kBlackColor,
-  fontFamily: 'Poppins',
-  fontSize: 14,
-  fontWeight: FontWeight.w400);
+    color: kBlackColor,
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeight: FontWeight.w400);
 
+TextStyle splashTitleText = const TextStyle(
+    color: kWhiteColor,
+    fontFamily: 'Poppins',
+    fontSize: 22,
+    fontWeight: FontWeight.w700);
 
 //Profile Screen
 const kSpacingUnit = 10;
@@ -99,7 +104,8 @@ final kDarkTheme = ThemeData(
         fontFamily: 'SFProText',
         bodyColor: kLightSecondaryColor,
         displayColor: kLightSecondaryColor,
-      ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kAccentColor),
+      ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kAccentColor),
 );
 
 final kLightTheme = ThemeData(
@@ -115,7 +121,6 @@ final kLightTheme = ThemeData(
         fontFamily: 'SFProText',
         bodyColor: kDarkSecondaryColor,
         displayColor: kDarkSecondaryColor,
-      ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kAccentColor),
+      ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kAccentColor),
 );
-
-

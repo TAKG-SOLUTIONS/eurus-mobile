@@ -5,8 +5,10 @@ import 'package:eurus_mobile/screens/profile.dart';
 import 'package:eurus_mobile/screens/trades.dart';
 import 'package:eurus_mobile/screens/wallet.dart';
 import 'package:eurus_mobile/theme.dart';
+import 'package:eurus_mobile/variables.dart';
 
 import 'package:flutter/material.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key key }) : super(key: key);
@@ -18,11 +20,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int value = 0;
   var pageName = 'Home';
+  
 
   final screens = [
     const HomeScreen(),
     const TradesScreen(),
-    const MarketScreen(),
+    MarketScreen(),
     const WalletsScreen(),
     const ProfileScreen()
   ];
@@ -37,6 +40,12 @@ class _MainScreenState extends State<MainScreen> {
       const Icon(Icons.account_balance_wallet_outlined, size: 30),
       const Icon(Icons.account_circle_outlined, size: 30),
     ];
+
+    if(pageNumber > 0 && pageNumber < 4){
+      value = pageNumber;
+      pageNumber = 0;
+    }
+
 
     if(value == 0){
       pageName = 'Home';
@@ -53,6 +62,7 @@ class _MainScreenState extends State<MainScreen> {
     else{
       pageName = 'Profile';
     }
+    
   Future<bool> _onWillPop() async{
     return (await showDialog(
         context: context,
