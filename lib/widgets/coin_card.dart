@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CoinCard extends StatelessWidget {
   CoinCard(
-      {@required this.name,
+      {Key key, @required this.name,
       @required this.symbol,
       @required this.imageUrl,
       @required this.price,
       @required this.change,
-      @required this.changePercentage});
+      @required this.changePercentage}) : super(key: key);
 
   String name;
   String symbol;
@@ -19,7 +20,7 @@ class CoinCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.fromLTRB(24.0, 10.0, 24.0, 10.0),
       child: Container(
         height: 100,
         decoration: BoxDecoration(

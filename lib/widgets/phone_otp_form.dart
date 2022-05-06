@@ -1,8 +1,7 @@
 import 'dart:ffi';
-import 'package:eurus_mobile/screens/phone_otp_verify.dart';
+import 'package:eurus_mobile/screens/main_page.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
-import '../theme.dart';
 
 // import 'checkbox.dart';
 
@@ -64,7 +63,7 @@ var otpArr = const Array(4);
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SignUpPhoneOtpVerifyScreen()))
+                  MaterialPageRoute(builder: (context) => const MainScreen()))
 
               }
             },

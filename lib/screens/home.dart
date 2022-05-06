@@ -1,6 +1,7 @@
 import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../variables.dart';
 import '../widgets/app_button_themes.dart';
 import 'main_page.dart';
 
@@ -23,9 +24,9 @@ class HomeScreen extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'images/home_banner.jpg',
+                    'images/home_banner.png',
                     width: 400,
-                    height: 140,
+                    height: 180,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -69,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       style: appMarketsBuyButton,
                       onPressed: () => {
+                        pageNumber = 2,
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -85,6 +87,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       style: appMarketsSellButton,
                       onPressed: () => {
+                        pageNumber = 2,
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -98,6 +101,40 @@ class HomeScreen extends StatelessWidget {
                 height: 40,
                 thickness: 2,
                 color: kDarkGreyColor,
+              ),
+              Column(
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      'Cryptocurrency List',
+                      style: subTitleBlack,
+                    ),
+                  ),
+                  const Divider(
+                    height: 30,
+                    thickness: 2,
+                    indent: 80,
+                    endIndent: 80,
+                    color: kDarkGreyColor,
+                  ),
+                  ElevatedButton(
+                    child: const Text(
+                      'View Crypto',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    style: appPrimaryHomeButton,
+                    onPressed: () => {
+                      pageNumber = 1,
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainScreen()))
+                    },
+                  ),
+                ],
               ),
             ],
           ),

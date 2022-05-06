@@ -30,17 +30,41 @@ TextStyle subTitle = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600);
 
+TextStyle subTitleBlack = const TextStyle(
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w600);
+
+TextStyle subTitleWhite = const TextStyle(
+    color: kWhiteColor,
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w600);
+
 TextStyle subLineText = const TextStyle(
     color: kSecondaryColor,
     fontFamily: 'Poppins',
     fontSize: 14,
     fontWeight: FontWeight.w500);
 
+TextStyle subLineTextBlack = const TextStyle(
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeight: FontWeight.w600);
+
 TextStyle miniLineText = const TextStyle(
     color: kPrimaryColor,
     fontFamily: 'Poppins',
     fontSize: 12,
     fontWeight: FontWeight.w400);
+
+TextStyle miniLineTextBold = const TextStyle(
+    color: kPrimaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 12,
+    fontWeight: FontWeight.w500);
 
 TextStyle textButton = const TextStyle(
     color: kBlackColor,

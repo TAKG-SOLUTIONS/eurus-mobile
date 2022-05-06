@@ -26,21 +26,21 @@ class UsdModel {
 
   factory UsdModel.fromJson(Map<String, dynamic> json) {
     return UsdModel(
-      price: json["price"] == null ? 0.0 : json["price"],
-      volume24h: json["volume_24"] == null ? 0.0 : json["volume_24"],
+      price: json["price"] ?? 0.0,
+      volume24h: json["volume_24"] ?? 0.0,
       percentChange_1h:
-          json["percent_change_1h"] == null ? 0.0 : json["percent_change_1h"],
+          json["percent_change_1h"] ?? 0.0,
       percentChange_24h:
-          json["percent_change_24h"] == null ? 0.0 : json["percent_change_24h"],
+          json["percent_change_24h"] ?? 0.0,
       percentChange_7d:
-          json["percent_change_7d"] == null ? 0.0 : json["percent_change_7d"],
+          json["percent_change_7d"] ?? 0.0,
       percentChange_30d:
           json["percent_change_30d"] == null ? 0.0 : json["percent_change_7d"],
       percentChange_60d:
-          json["percent_change60d"] == null ? 0.0 : json["percent_change60d"],
+          json["percent_change60d"] ?? 0.0,
       percentChange_90d:
-          json["percent_change90d"] == null ? 0.0 : json["percent_change90d"],
-      marketCap: json["market_cap"] == null ? 0.0 : json["market_cap"],
+          json["percent_change90d"] ?? 0.0,
+      marketCap: json["market_cap"] ?? 0.0,
       lastUpdated: json["last_updated"],
     );
   }

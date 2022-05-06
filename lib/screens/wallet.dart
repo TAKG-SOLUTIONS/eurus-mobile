@@ -1,6 +1,7 @@
 import 'package:eurus_mobile/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../variables.dart';
 import '../widgets/app_button_themes.dart';
 import 'main_page.dart';
 
@@ -69,6 +70,7 @@ class WalletsScreen extends StatelessWidget {
                     ),
                     style: appWalletsBuyButton,
                     onPressed: () => {
+                      pageNumber = 3,
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -88,6 +90,7 @@ class WalletsScreen extends StatelessWidget {
                     ),
                     style: appWalletsSellButton,
                     onPressed: () => {
+                      pageNumber = 3,
                       Navigator.push(
                           context,
                           MaterialPageRoute(

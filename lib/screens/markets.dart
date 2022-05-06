@@ -50,6 +50,7 @@ class MarketScreen extends StatelessWidget {
                 ),
                 style: appMarketsBuyButton,
                 onPressed: () => {
+                  pageNumber = 2,
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -66,6 +67,7 @@ class MarketScreen extends StatelessWidget {
                 ),
                 style: appMarketsSellButton,
                 onPressed: () => {
+                  pageNumber = 2,
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -76,7 +78,16 @@ class MarketScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 30,
+        ),
+        Text(
+          'Favorite Currencies',
+          style: subTitleBlack,
+        ),
+        const Divider(
+          height: 10,
+          thickness: 2,
+          color: kDarkGreyColor,
         ),
       ],
     );
@@ -106,6 +117,7 @@ class MarketScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
+              pageNumber = 1;
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MainScreen()));
             },
@@ -120,6 +132,7 @@ class MarketScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
+              pageNumber = 2;
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MainScreen()));
             },
