@@ -45,6 +45,7 @@ dependencies:
 
   cupertino_icons: ^1.0.4
   flutter_svg: ^1.0.3
+  loggy: ^2.0.1+1
 
   # StateManagemant Packages
   flutter_bloc: ^8.0.1
