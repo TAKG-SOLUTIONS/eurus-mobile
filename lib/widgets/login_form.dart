@@ -1,4 +1,5 @@
 import 'package:eurus_mobile/screens/main_page.dart';
+import 'package:eurus_mobile/variables.dart';
 import 'package:eurus_mobile/widgets/app_button_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:loggy/loggy.dart';
@@ -43,8 +44,9 @@ class _LogInFormState extends State<LogInForm> {
               else
                 {
                   _loginFormKey.currentState.save(),
-                  logInfo(_email),
-                  logInfo(_password),
+                  print(_email),
+                  print(_password),
+                  loginValue = true,
                   Navigator.push(
                       context,
                       MaterialPageRoute(

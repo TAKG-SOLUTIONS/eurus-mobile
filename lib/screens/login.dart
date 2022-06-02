@@ -1,5 +1,4 @@
 import '../constants.dart' as constants;
-
 import 'reset_pw_email_enter.dart';
 import 'package:flutter/material.dart';
 import 'signup.dart';
@@ -13,93 +12,114 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Center(
-          child: Text(constants.APPLICATION_NAME),
+
+  Future<bool> _onWillPop() async{
+    return false;
+  }
+
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: const Center(
+            child: Text(
+              constants.APPLICATION_NAME
+            ),
+          ),
+          backgroundColor: kAppBarColor,
         ),
-        backgroundColor: kAppBarColor,
-      ),
-      body: Padding(
-        padding: kDefaultPadding,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 60,
-              ),
-              Text(
-                'Welcome!',
-                style: titleText,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                'Let\'s get started',
-                style: subTitle,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              const LogInForm(),
-              const SizedBox(
-                height: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const ResetPasswordEmailScreen()));
-                },
-                child: const Center(
-                  child: Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: kZambeziColor,
-                      fontSize: 14,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 1.5,
-                    ),
-                  ),
+        body: Padding(
+          padding: kDefaultPadding,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 60,
                 ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Center(
-                child: Column(
-                  children: [
-                    Text(
-                      'Don\'t have an account?',
-                      style: subTitle,
-                    ),
-                  ],
+                Text(
+                  'Welcome!',
+                  style: titleText,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Center(
-                child: ElevatedButton(
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  style: appPrimaryButton,
-                  onPressed: () => {
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Let\'s get started',
+                  style: subTitle,
+                ),
+                
+                const SizedBox(
+                  height: 5,
+                ),
+                
+                const LogInForm(),
+    
+                const SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const SignUpScreen()))
+                            builder: (context) => const ResetPasswordEmailScreen()));
                   },
+    
+                  child: const Center(
+                    child: Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        color: kZambeziColor,
+                        fontSize: 14,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 1.5,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                
+                const SizedBox(
+                  height: 40,
+                ),
+    
+                Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        'Don\'t have an account?',
+                        style: subTitle,
+                      ),
+                    ],
+                  ),
+                ),
+    
+                const SizedBox(
+                  height: 10,
+                ),
+    
+                Center(
+                  child: ElevatedButton(
+                  child: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Colors.white, fontSize: 16
+                        ),
+                  ),
+                  
+                  style: appPrimaryButton,
+    
+                  onPressed: () => { 
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SignUpScreen()))               
+                  },
+                 ),
+                ),
+    
+              ],
+            ),
           ),
         ),
       ),

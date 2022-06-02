@@ -5,6 +5,7 @@ import 'package:eurus_mobile/screens/profile.dart';
 import 'package:eurus_mobile/screens/trades.dart';
 import 'package:eurus_mobile/screens/wallet.dart';
 import 'package:eurus_mobile/theme.dart';
+import 'package:eurus_mobile/variables.dart';
 
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
   final screens = [
     const HomeScreen(),
     const TradesScreen(),
-    const MarketScreen(),
+    MarketScreen(),
     const WalletsScreen(),
     const ProfileScreen()
   ];
@@ -36,6 +37,11 @@ class _MainScreenState extends State<MainScreen> {
       const Icon(Icons.account_balance_wallet_outlined, size: 30),
       const Icon(Icons.account_circle_outlined, size: 30),
     ];
+
+    if (pageNumber > 0 && pageNumber < 4) {
+      value = pageNumber;
+      pageNumber = 0;
+    }
 
     if (value == 0) {
       pageName = 'Home';
@@ -53,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
             context: context,
             builder: (context) => AlertDialog(
               title: const Text('Are you sure?'),
-              content: const Text('Do you want to exit an App'),
+              content: const Text('Do you want to exit on App'),
               actions: <Widget>[
                 TextButton(
                   onPressed: () =>
@@ -89,21 +95,10 @@ class _MainScreenState extends State<MainScreen> {
                     child: Text(pageName),
                   ),
                 ),
-                // actions: <Widget>[
-                //   IconButton(onPressed: onPressed, icon: icon)
-                // ],
+
                 backgroundColor: kAppBarColor,
               ),
-
-              // body: Center(
-              //   child: Text(
-              //     '$value',
-              //     style: titleText,
-              //   ),
-              // ),
-
               body: screens[value],
-
               bottomNavigationBar: Theme(
                 data: Theme.of(context).copyWith(
                   iconTheme: const IconThemeData(color: kBlackColor),

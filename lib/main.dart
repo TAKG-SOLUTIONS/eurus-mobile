@@ -1,7 +1,12 @@
+import 'package:eurus_mobile/screens/main_page.dart';
+import 'package:eurus_mobile/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:loggy/loggy.dart';
 
 import 'screens/login.dart';
+import 'package:provider/provider.dart';
+
+import 'widgets/widgets_for_settings/notifier.dart';
 
 void main() {
   Loggy.initLoggy(
@@ -22,10 +27,27 @@ class ExchangeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Poppins'),
-      home: const LogInScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<SingleNotifier>(
+          create: (_) => SingleNotifier(),
+          ),
+        
+        ChangeNotifierProvider(
+          create: (_) => MultipleNotifier([]),
+          ),
+
+        ChangeNotifierProvider<SingleNotifierCurrency>(
+          create: (_) => SingleNotifierCurrency(),
+          ),
+        ],
+        
+
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'Poppins'),
+        home: const SplashScreen(),
+      ),
     );
   }
 }

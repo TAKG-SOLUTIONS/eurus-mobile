@@ -35,18 +35,25 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           buildInputEmail('Email'),
           buildInputPassword('Password', true),
-          const SizedBox(
-            height: 20,
-          ),
-          const CheckBox('Agree to terms and conditions.'),
-          const SizedBox(
-            height: 20,
-          ),
-          const CheckBox('I have at least 18 years old.'),
-          const SizedBox(
-            height: 20,
-          ),
-          ElevatedButton(
+
+            const SizedBox(
+              height: 20,
+            ),
+            
+            const CheckBox(
+              'Agree to terms and conditions.'
+              ),
+            const SizedBox(
+              height: 20,
+            ),
+            const CheckBox(
+              'I have at least 18 years old.'
+              ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            ElevatedButton(
             child: const Text(
               'Next',
               style: TextStyle(color: Colors.white, fontSize: 16),
